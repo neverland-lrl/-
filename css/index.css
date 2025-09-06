@@ -1,17 +1,20 @@
 body {
-    position: relative;
-    min-width: 320px;
-    max-width: 540px;
-    margin: 0 auto;
-    font-size: 16px;
-    font-family: -apple-system, Helvetica, sans-serif;
-    line-height: 1.5;
-    color: #000;
-    background: #fff;
-    overflow: hidden;
-    -webkit-tap-highlight-color: transparent;
-    -webkit-text-size-adjust: none;
-}
+            min-width: 320px;
+            max-width: 540px;
+            margin: 0 auto;
+            font-size: 16px;
+            font-family: -apple-system, Helvetica, sans-serif;
+            line-height: 1.5;
+            color: #000;
+            background: #fff;
+            -webkit-tap-highlight-color: transparent;
+            -webkit-text-size-adjust: none;
+            padding: 10px;
+            /* 添加内边距 */
+            word-wrap: break-word;
+            /* 允许长单词换行 */
+            overflow-wrap: break-word;
+            /* 确保文本换行 */
 
 a {
     text-decoration: none;
@@ -274,4 +277,5 @@ h2 {
     display: block;
     transform: translateY(250px);
     padding-left: 15px;
+
 }
