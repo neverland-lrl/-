@@ -9,12 +9,7 @@ body {
             background: #fff;
             -webkit-tap-highlight-color: transparent;
             -webkit-text-size-adjust: none;
-            padding: 10px;
-            /* 添加内边距 */
-            word-wrap: break-word;
-            /* 允许长单词换行 */
-            overflow-wrap: break-word;
-            /* 确保文本换行 */
+
 
 a {
     text-decoration: none;
@@ -279,3 +274,4 @@ h2 {
     padding-left: 15px;
 
 }
+
