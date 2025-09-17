@@ -226,6 +226,11 @@ h2 {
     font-weight: 300;
 }
 
+.qie p {
+    color: purple !important;
+    font-weight: 700 !important;
+}
+
 .dianjiqi {
     position: relative;
     width: 100%;
