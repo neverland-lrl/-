@@ -164,8 +164,8 @@ h2 {
     width: 200px;
     background-color: pink;
     border-radius: 10px;
-    background: url(../images/yuqi.jpg) no-repeat;
-    background-size: 100% 200px;
+    background: url(../images/renwu.jpg) no-repeat;
+    background-size: 100%;
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2)
 }
 
@@ -174,7 +174,7 @@ h2 {
     top: 90px;
     left: 50%;
     transform: translateX(-50%);
-    color: #fff;
+    color: black;
 }
 
 .zhuyi span {
