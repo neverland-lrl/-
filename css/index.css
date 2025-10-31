@@ -222,8 +222,8 @@ h2 {
 
 .select a p {
     font-size: 12px;
-    color: red;
-    font-weight: 300;
+    color: purple;
+    font-weight: 700;
 }
 
 .qie p {
@@ -276,10 +276,18 @@ h2 {
 
 .di {
     display: block;
-    transform: translateY(250px);
+    transform: translateY(230px);
     padding-left: 15px;
 }
 
 .kakao {
-    margin-top: 10px
+    margin-top: 10px;
+}
+
+.ping {
+    margin-top: 10px;
+}
+
+.red {
+    color: red;
 }
