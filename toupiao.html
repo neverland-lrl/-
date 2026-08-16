@@ -276,7 +276,33 @@
         <a href="#top" style="margin-left: auto;">↑ 顶部</a>
     </div>
     <p style="color: #6b7a8d; font-size: 0.85rem; margin-top: 8px;">点击目录或底部链接，平滑跳转至对应板块。</p>
-
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // 拦截所有锚点链接
+            document.querySelectorAll('a[href^="#"]').forEach(function(link) {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#top' || targetId === '#') {
+                        window.scrollTo({
+                            top: 0,
+                            behavior: 'smooth'
+                        });
+                    } else {
+                        const target = document.querySelector(targetId);
+                        if (target) {
+                            target.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                        }
+                    }
+                    // 清除地址栏 hash，不增加历史记录
+                    history.replaceState(null, null, window.location.pathname);
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>
