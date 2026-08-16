@@ -3,11 +3,17 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>投票</title>
-    <link rel="stylesheet" href="css/normal.css">
-    <link rel="stylesheet" href="css/toupiao.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>投票教程 · 目录跳转</title>
     <style>
+        /* reset & base */
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
         body {
             min-width: 320px;
             max-width: 540px;
@@ -19,96 +25,258 @@
             background: #fff;
             -webkit-tap-highlight-color: transparent;
             -webkit-text-size-adjust: none;
-            padding: 10px;
-            /* 添加内边距 */
+            padding: 12px 16px 30px;
             word-wrap: break-word;
-            /* 允许长单词换行 */
             overflow-wrap: break-word;
-            /* 确保文本换行 */
         }
         
         a {
             text-decoration: none;
-            list-style: none;
+            color: #0066cc;
         }
         
-        ul {
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        ul,
+        ol {
             list-style: none;
             margin: 0;
             padding: 0;
         }
         
         p {
-            margin: 0;
-            padding: 0;
-            padding: 10px;
+            margin: 0 0 0.6em 0;
+            padding: 4px 0;
         }
         
         h2 {
-            margin: 0;
-            padding: 0;
-            padding: 10px;
+            margin: 1.2em 0 0.4em 0;
+            padding: 6px 0 4px 0;
+            font-size: 1.4rem;
+            border-bottom: 1px solid #eaeaea;
         }
         
-        div {
-            /* CSS3盒子模型 */
-            box-sizing: border-box;
+        h3 {
+            margin: 1em 0 0.3em 0;
+            font-size: 1.2rem;
+        }
+        
+        img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            margin: 8px 0 12px 0;
+            border-radius: 8px;
+            background: #f5f5f5;
         }
         
         .red {
-            color: red;
+            color: #c00;
+            font-weight: 600;
         }
         
         .blue {
-            color: green;
+            color: #0a6b3f;
+            font-weight: 500;
+        }
+        /* 目录卡片 */
+        
+        .toc {
+            background: #f8fafc;
+            border-radius: 16px;
+            padding: 16px 18px;
+            margin: 10px 0 24px 0;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+            border: 1px solid #eef2f6;
+        }
+        
+        .toc-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #1e293b;
+        }
+        
+        .toc-item {
+            display: block;
+            padding: 8px 6px 8px 12px;
+            margin: 4px 0;
+            border-radius: 10px;
+            background: white;
+            border-left: 4px solid #3b82f6;
+            font-weight: 500;
+            color: #0b1e33;
+            transition: background 0.1s ease;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
+        }
+        
+        .toc-item:active {
+            background: #e6eff9;
+        }
+        
+        .toc-item i {
+            font-style: normal;
+            margin-right: 6px;
+            opacity: 0.6;
+        }
+        
+        .section-anchor {
+            scroll-margin-top: 12px;
+        }
+        /* 一些小修饰 */
+        
+        .badge {
+            background: #dbeafe;
+            color: #1e4f8a;
+            font-size: 0.75rem;
+            padding: 2px 10px;
+            border-radius: 30px;
+            display: inline-block;
+            margin-left: 6px;
+        }
+        
+        .inline-link {
+            background: #f1f5f9;
+            padding: 2px 8px;
+            border-radius: 14px;
+            font-size: 0.9rem;
+            word-break: break-all;
+        }
+        
+        hr {
+            margin: 20px 0 8px 0;
+            border: none;
+            border-top: 1px dashed #d0d8e0;
+        }
+        /* 新增：回到顶部小链接，与标题同行，不破坏原有结构 */
+        
+        .back-top-link {
+            font-size: 0.75rem;
+            font-weight: 400;
+            margin-left: 12px;
+            color: #64748b;
+            background: #f1f5f9;
+            padding: 0 8px;
+            border-radius: 30px;
+            white-space: nowrap;
+            transition: background 0.1s;
+            text-decoration: none;
+            display: inline-block;
+            line-height: 1.6;
+        }
+        
+        .back-top-link:hover {
+            background: #dce3ed;
+            text-decoration: none;
+        }
+        /* 保持h2内文字垂直对齐 */
+        
+        h2 .back-top-link {
+            vertical-align: middle;
         }
     </style>
 </head>
 
 <body>
-    <h2 class="red">首先是挂梯或者梯子什么的</h2>
+
+    <!-- ======= 目录 (点击跳转) ======= -->
+    <div class="toc">
+        <div class="toc-title">目录 · 点击跳转</div>
+        <a href="#anchor-ti" class="toc-item"><i>🔹</i> 梯子选择（苹果和安卓）</a>
+        <a href="#anchor-download" class="toc-item"><i>🔹</i> 梯子软件下载（安卓）</a>
+        <a href="#anchor-clash" class="toc-item"><i>🔹</i> 樱花买的节点导入clash（选看）</a>
+        <a href="#anchor-voteapp" class="toc-item"><i>🔹</i> 投票软件下载（苹果和安卓）</a>
+        <a href="#anchor-appleid" class="toc-item"><i>🔹</i> 外区ID创建（苹果用户）</a>
+        <!-- 额外加一个快速回顶 (可选)
+        <div style="margin-top: 10px; text-align: right; font-size: 0.85rem;">
+            <a href="#top" style="color: #64748b;">↑ 回到顶部</a>
+        </div> -->
+    </div>
+
+    <!-- ====== 内容区块 ====== -->
+
+    <!-- 1. 梯子选择 -->
+    <h2 id="anchor-ti" class="section-anchor">
+        首先就是国内用户必备的梯子 <span class="badge">苹果/安卓</span>
+        <a href="#top" class="back-top-link">↑ 回顶</a>
+    </h2>
     <p class="blue">简单总结一下：选梯子，下软件，买线路，导入线路，使用梯子，下载软件，很简单的</p>
     <p>梯子只是个称呼，是我们用于访问外网的工具，要是不挂梯子会被限制访问，而就投票和其他用途的APP来说，几乎都是外网软件，所以需要梯子才能正常使用，所以翻墙也就是我们所说的访问外网了</p>
 
-    <h2>梯子选择</h2>
-    <p>苹果可选下面两个免费的（用韩区ID搜索，创ID划到最下面有教程）</p>
-    <img src="images/pingjia.jpg" alt="" width="100%">
-    <p>安卓可选价不高且流量较多但是线路较少的一元机场，链接：https://zhverge.com/#pricing <a href="https://zhverge.com/#pricing">一元机场</a></p>
-    <img src="images/yiyuam.png" alt="" width="100%">
-    <p>就🍎和安卓都能用的话，比较合适的就是价不高且稳定的樱花猫（sakura cat），购买🔗：https://sakura-cat1.com <a href="https://sakura-cat1.com">樱花猫</a>（点此跳转，下面也是）</p>
+    <h3>梯子选择</h3>
+    <p>苹果可选下面两个免费的（用韩区ID搜索，创ID最后有教程）</p>
+    <img src="images/pingjia.jpg" alt="苹果梯子评价" width="100%">
+    <p>安卓可选价不高且流量较多但是线路较少的一元机场，链接：<a href="https://zhverge.com/#pricing" target="_blank">https://zhverge.com/#pricing</a></p>
+    <img src="images/yiyuam.png" alt="一元机场" width="100%">
+    <p>就🍎和安卓都能用的话，比较合适的就是价不高且稳定的樱花猫（sakura cat），购买🔗：<a href="https://sakura-cat1.com" target="_blank">https://sakura-cat1.com</a> （点此跳转，下面也是）</p>
     <p class="blue">樱花猫是🍎和安卓用户都能用的梯子，看清楚是iOS还是安卓选择就好</p>
-    <img src="images/mao.png" alt="" width="100%">
-    <h2>软件下载（不要去浏览器搜，会下到盗版）</h2>
-    <p class="red">樱花猫里包括本身的安装包和clash（一元机场买的线路可以在这个软件用）的安装包，根据设备需求选择即可</p>
-    <img src="images/xiazai1.jpg" alt="" width="100%">
-    <img src="images/xiazai2.jpg" alt="" width="100%">
+    <img src="images/mao.png" alt="樱花猫" width="100%">
 
-    <h2>这里另说一下樱花猫安卓用户导入clash的事情（选看）</h2>
-    <img src="images/daoru1.jpg" alt="" width="100%">
-    <img src="images/daoru2.jpg" alt="" width="100%">
+    <!-- 2. 软件下载 -->
+    <h2 id="anchor-download" class="section-anchor">
+        软件下载（安卓） <span class="badge">官网</span>
+        <a href="#top" class="back-top-link">↑ 回顶</a>
+    </h2>
+    <p>不要直接在浏览器里搜，会下到盗版，要去官网下</p>
+    <p class="red">樱花猫里包括本身的安装包和clash（一元机场买的线路可以在这个软件用）的安装包，根据设备需求选择即可</p>
+    <img src="images/xiazai1.jpg" alt="下载页面1" width="100%">
+    <img src="images/xiazai2.jpg" alt="下载页面2" width="100%">
+
+    <!-- 3. clash导入（选看） -->
+    <h2 id="anchor-clash" class="section-anchor">
+        樱花猫导入clash（选看）
+        <a href="#top" class="back-top-link">↑ 回顶</a>
+    </h2>
+    <img src="images/daoru1.jpg" alt="导入步骤1" width="100%">
+    <img src="images/daoru2.jpg" alt="导入步骤2" width="100%">
     <p>从上面樱花猫的🔗进去网页，买好流量套餐后再点击这里就可以先下载clash进行导入了，一般允许三个设备同时登</p>
 
-    <h2 class="red">梯子搞好之后就是大家必备的下载数据相关APP的软件</h2>
+    <!-- 4. 投票软件下载 -->
+    <h2 id="anchor-voteapp" class="section-anchor">
+        投票软件下载 <span class="badge">苹果/安卓</span>
+        <a href="#top" class="back-top-link">↑ 回顶</a>
+    </h2>
+    <p class="red">梯子搞好之后就是大家必备的下载数据相关APP的软件</p>
     <p class="blue">苹果：</p>
     <p>这里🍎用户使用自带的apple store,切换外网ID就好，外网ID需要自己注册或买或借，可以找群里面的奶啵啵借来下载软件（往下翻有注册教程）</p>
     <p class="blue">安卓</p>
     <p>安卓使用谷歌商店或者安大师进行下载（安大师推荐荣耀用户）。安卓下载谷歌商店需要<span class="red">先下载谷歌框架支持运行</span>，下载好之后只需要挂梯就能下载相关APP了</p>
-    <p>谷歌商店下载链接：https://www.pchome.net/app/528686.html（有的手机可以在应用商店下载谷歌play商店，如下图所示，可以找找）<a href="https://www.pchome.net/app/528686.html">谷歌商店</a></p>
-    <img src="images/play.jpg" alt="" width="100%">
-    <p>谷歌框架：https://m.ddooo.com/softdown/200169.htm <a href="https://m.ddooo.com/softdown/200169.htm">谷歌框架</a></p>
+    <p>谷歌商店下载链接：<a href="https://www.pchome.net/app/528686.html" target="_blank">https://www.pchome.net/app/528686.html</a>（有的手机可以在应用商店下载谷歌play商店，如下图所示，可以找找）</p>
+    <img src="images/play.jpg" alt="谷歌商店" width="100%">
+    <p>谷歌框架：<a href="https://m.ddooo.com/softdown/200169.htm" target="_blank">https://m.ddooo.com/softdown/200169.htm</a></p>
     <p>需要谷歌浏览器的可以在谷歌商店下载，谷歌浏览器可有可无，有时候打开外网的链接会比较快</p>
-    <img src="images/guge.jpg" alt="" width="100%">
+    <img src="images/guge.jpg" alt="谷歌浏览器" width="100%">
     <p>谷歌框架一般安卓用户下载不会显示在桌面，算是系统内置了</p>
     <p class="blue">打投APP的下载尽量不要使用安装包，因为需要频繁更新且易闪退，搞好谷歌商店之后挂梯去谷歌商店搜索着下载即可（🍎用户搜不到就切ID）</p>
-    <img src="images/app.jpg" alt="" width="100%">
+    <img src="images/app.jpg" alt="投票app合集" width="100%">
     <p>打歌相关的APP具体就这七个APP，这张图mubeat为音乐中心的投票软件，LINC为人气歌谣事前投票软件，higher是人气歌谣实时投票软件，idol Champ是冠军秀的投票软件，star planet是the show的投票软件，FANCAST是音乐银行的投票软件</p>
     <p>这个mnet plus是MAMA的相关投票软件，另外也是MCD的事前和实时投票软件，不需要攒，（安卓用户可以进行大量分身多开，会用点击器的可以试着自动化投票（多开和点击器见点击器那个模块））</p>
     <p class="blue">其中有些APP是有大量备号的，大家可以私信大马哈和其他群管理领号攒票或者投票</p>
-    <p class="blue">基础教程到此结束，恭喜各位👏，可以去看前面投票攒票的教程了，还有疑问可以在群里说</p>
-    <h2 class="red">创建外区ID</h2>
+
+    <!-- 5. 外区ID创建 -->
+    <h2 id="anchor-appleid" class="section-anchor">
+        创建外区ID <span class="badge">苹果用户</span>
+        <a href="#top" class="back-top-link">↑ 回顶</a>
+    </h2>
+    <p class="red">创建外区ID</p>
     <p>首先创建一个外区ID，否则应用商店搜不到相应的软件</p>
-    <img src="images/zhuce.jpg" alt="" width="100%">
+    <img src="images/zhuce.jpg" alt="注册外区ID" width="100%">
     <p>注册完之后用此账户在app store里下载</p>
+
+    <!-- 底部快速导航（保留） -->
+    <hr>
+    <div style="display: flex; flex-wrap: wrap; gap: 8px 14px; padding: 8px 0; font-size: 0.9rem;">
+        <a href="#anchor-ti">梯子选择</a>
+        <a href="#anchor-download">软件下载</a>
+        <a href="#anchor-clash">导入clash</a>
+        <a href="#anchor-voteapp">投票APP</a>
+        <a href="#anchor-appleid">外区ID</a>
+        <a href="#top" style="margin-left: auto;">↑ 顶部</a>
+    </div>
+    <p style="color: #6b7a8d; font-size: 0.85rem; margin-top: 8px;">点击目录或底部链接，平滑跳转至对应板块。</p>
+
 </body>
 
 </html>
