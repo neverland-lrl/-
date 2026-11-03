@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>点击器</title>
+</head>
+<style>
+    body {
+        min-width: 320px;
+        max-width: 540px;
+        margin: 0 auto;
+        font-size: 16px;
+        font-family: -apple-system, Helvetica, sans-serif;
+        line-height: 1.5;
+        color: #000;
+        background: #fff;
+        -webkit-tap-highlight-color: transparent;
+        -webkit-text-size-adjust: none;
+        padding: 10px;
+        /* 添加内边距 */
+        word-wrap: break-word;
+        /* 允许长单词换行 */
+        overflow-wrap: break-word;
+        /* 确保文本换行 */
+    }
+    
+    p {
+        display: block;
+        margin: 0;
+        padding: 0;
+        padding: 10px;
+        width: 100%;
+    }
+    
+    h2 {
+        margin: 0;
+        padding: 0;
+    }
+    
+    div {
+        /* CSS3盒子模型 */
+        box-sizing: border-box;
+    }
+    
+    .red {
+        color: red;
+    }
+</style>
+
+<body>
+    <p>点击器分两种思路：1.用别人的（嫌麻烦的可以） 2.自己做（学会了干什么都可以自己做，方便）</p>
+    <h1>一、用别人的点击器</h1>
+    <p class="red">用拦截器拦截小广告（必须要下，没有的找群里人要）</p>
+    <p>流程都是一样的，先运行试一下，没有反应就说明是分辨率问题，要替换当前内容：</p>
+    <img src="images/djq3.jpg" alt="" width="100%">
+    <p>然后是桌面点击的位置，一般情况下只有桌面位置要改，观察方式如下：（可以截张图在相册里改）</p>
+    <img src="images/djq2.jpg" alt="" width="100%">
+    <p>还有就是识别后按钮的点击位置</p>
+    <img src="images/djq1.jpg" alt="" width="100%">
+    <h1>二、自己写脚本</h1>
+    <p>一般分为两个部分，桌面的点击和应用内部的点击，两个部分分别建一个脚本，套用子任务就好，有重复投票还可以再建一个</p>
+    <img src="images/djq4.jpg" alt="" width="100%">
+    <p>应用内部点击思路：（按钮识别>图片识别>手势点击）</p>
+    <img src="images/djq7.jpg" alt="" width="100%">
+    <p class="red">1.按顺序从头到尾点一遍（能用按钮识别就用按钮）</p>
+    <p class="red">2.根据每个页面加载速度的不同设置一些循环，可以在当前页面找一个独特的按钮作为这个页面加载出来的识别</p>
+    <p class="red">3.完善细节，修改bug</p>
+    <p>脚本详细介绍：</p>
+    <img src="images/djq5.jpg" alt="" width="100%">
+    <img src="images/djq6.jpg" alt="" width="100%">
+    <img src="images/djq8.jpg" alt="" width="100%">
+    <img src="images/djq9.jpg" alt="" width="100%">
+</body>
+
+</html>
